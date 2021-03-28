@@ -1,11 +1,11 @@
 ## Setup
 
-### Application Server:
+### Application Server
 * The compiled Microservice *User-Management* already contains the Application Server and can be executed directly inside a Container that has Java version 11 installed.
 
 * The running Microservices is available at the URL http://localhost:8081.
 
-### Database:
+### Database
 
 * The Microservice *User-Management* needs its own Database. Therefore an Instance of the PostgreSQL Database *user_management* is set up on a Container.
 
@@ -21,16 +21,28 @@ http://localhost:8081/user-management/
 | POST | /update-all-existing-users | Updates all existing Users in the System |
 | GET | /find-user-by-username/{username} | Returns a User with the corresponding Username |
 | GET | /find-all-users | Returns all existing Users |
+
+### Jib Maven Plugin
+
+*Jib is a deamonless Maven Plugin for building Docker and OCI Images for Java Applications.*
+
+* Build an Image with Jib and store it locally
+    * docker login
+    * mvnw clean install -P jib-push-to-local
+
+* Build an Image with Jib and push it to Docker Hub
+    * docker login
+    * mvnw clean install -P jib-push-to-dockerhub
 ___
 
 ## Einrichtung
-### Anwendungsserver:
+### Anwendungsserver
 
 * Der kompilierte Microservice *User-Management* enthält bereist den Anwendungsserver und kann direkt innerhalb eines Containers ausgeführt werden, welcher die Java-Version 11 installiert hat.
 
 * Der laufende Microservices ist erreichbar unter der URL http://localhost:8081.
 
-### Datenbank:
+### Datenbank
 
 * Der Microservice *User-Management* benötigt seine eigene Datenbank. Dafür wird auf einem Container eine Instanz der Datenbank PostgreSQL *user_management* eingerichtet.
 
