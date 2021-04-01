@@ -2,7 +2,6 @@ package de.share_your_idea.user_management.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import de.share_your_idea.user_management.entity.UserEntity;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -21,9 +20,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /* Integration-Test for UserController */
 @AutoConfigureMockMvc
 @SpringBootTest
-@PropertySource("classpath:application.yml")
-@PropertySource("classpath:bootstrap.yml")
-@Disabled
+@PropertySource("classpath:application-it.yml")
+@PropertySource("classpath:bootstrap-it.yml")
 class UserManagementIT {
     @Autowired
     private MockMvc mockMvc;
